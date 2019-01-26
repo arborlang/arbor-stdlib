@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/radding/arbor-dev"
-)
+import arbor "github.com/arborlang/arbor-dev"
 
 //Env is the environ
 var Env = arbor.Resolver{

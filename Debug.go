@@ -3,13 +3,15 @@ package main
 import (
 	"bufio"
 	"encoding/binary"
+
 	// "bytes"
 	"fmt"
-	"github.com/perlin-network/life/exec"
-	"github.com/radding/arbor-dev"
 	"os"
 	"strconv"
 	"strings"
+
+	arbor "github.com/arborlang/arbor-dev"
+	"github.com/perlin-network/life/exec"
 )
 
 // logs logs a formated message to the open stdout HANDLER

@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/radding/arbor-dev"
+
+	arbor "github.com/arborlang/arbor-dev"
 )
 
 //AllocateOnHeap allocates some data on the Heap

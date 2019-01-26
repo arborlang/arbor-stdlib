@@ -1,3 +1,5 @@
+export GO111MODULE=on
+
 all: test plug
 
 plug: 
@@ -5,3 +7,9 @@ plug:
 
 test:
 	go test -v .
+
+refresh:
+	rm -rf vendor/
+	go mod vendor
+
+clean_plugin: refresh plug
