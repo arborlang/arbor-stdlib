@@ -49,10 +49,9 @@ func Breakpoint(v *arbor.VM) int64 {
 		case "continue", "c", "next", "n":
 			exit = true
 		case "show":
-			handleShow(exploded[1:], vm)
+			handleShow(exploded[1:], vm, v)
 		case "access":
 			handleMemAccess(exploded[1:], vm)
-		//
 		default:
 			logLn("unknown command: %s", cmd)
 		}
@@ -90,20 +89,26 @@ func handleMemAccess(cmdParts []string, vm *exec.VirtualMachine) {
 				var le uint64
 				binary.LittleEndian.PutUint64([]byte{data}, le)
 				log(" AS LE: %d", le)
+			default:
+				logLn("unknown type %s", part)
 			}
 		}
 	}
 	log("\n")
 }
 
-func handleShow(cmdParts []string, vm *exec.VirtualMachine) {
-	switch cmdParts[0] {
+func handleShow(cmdParts []string, vm *exec.VirtualMachine, v *arbor.VM) {
+	switch part := cmdParts[0]; part {
 	case "mem", "memory", "m":
 		printMemory(cmdParts[1:], vm)
 	case "stack", "s":
 		PrintStack(vm)
 	case "trace", "t":
 		vm.PrintStackTrace()
+	case "stacktop":
+		logLn("STACK TOP: %d", v.StackTop)
+	default:
+		logLn("unknown command %d", part)
 	}
 }
 

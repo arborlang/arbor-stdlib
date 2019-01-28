@@ -4,6 +4,8 @@ replace github.com/go-interpreter/wagon v0.0.0 => github.com/perlin-network/wago
 
 replace github.com/arborlang/arbor-dev v0.0.0-20190126210124-ccaaedf77120 => ../arbor-dev
 
+replace github.com/perlin-network/life v0.0.0-20181215083421-28a99a6d79ec => ../../radding/life
+
 require (
 	github.com/arborlang/arbor-dev v0.0.0-20190126210124-ccaaedf77120
 	github.com/perlin-network/life v0.0.0-20181215083421-28a99a6d79ec
